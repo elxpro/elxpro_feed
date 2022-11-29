@@ -17,6 +17,12 @@ defmodule ElxproFeedWeb.Router do
   scope "/", ElxproFeedWeb do
     pipe_through :browser
 
+    live "/cars", CarLive.Index, :index
+    live "/cars/new", CarLive.Index, :new
+    live "/cars/:id/edit", CarLive.Index, :edit
+
+    live "/cars/:id", CarLive.Show, :show
+    live "/cars/:id/show/edit", CarLive.Show, :edit
     get "/", PageController, :home
   end
 
