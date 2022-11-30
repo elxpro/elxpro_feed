@@ -17,6 +17,10 @@ button {
   font-size: 1rem;
 }
 
+:focus {
+  @apply shadow-sm shadow-cyan-500 outline-transparent;
+}
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
