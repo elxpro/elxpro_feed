@@ -1,5 +1,6 @@
 <aside class="col-start-1 col-end-4 bg-neutral-800 rounded-lg overflow-hidden" id={@id}>
   <img
+    data-role="profile-background"
     class="object-cover w-full h-[4.5rem]"
     src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=50"
     alt=""
@@ -7,17 +8,23 @@
 
   <div data-role="profile" class="flex flex-col items-center -mt-8">
     <img
+      data-role="profile-photo"
       src="https://avatars.githubusercontent.com/u/12762300?v=4"
       alt=""
       class="w-16 h-16 rounded-lg border-2 border-cyan-700 outline-2 outline-cyan-300"
     />
 
-    <strong class="mt-4 text-neutral-100 leading-relaxed">Gustavo Oliveira</strong>
-    <span class="text-neutral-400 leading-relaxed">Elixir Developer</span>
+    <strong class="mt-4 text-neutral-100 leading-relaxed" data-role="profile-user">
+      Gustavo Oliveira
+    </strong>
+    <span class="text-neutral-400 leading-relaxed" data-role="profile-role">
+      Elixir Developer
+    </span>
   </div>
 
   <footer class="border-t border-neutral-400 mt-6 pt-8 pb-8 flex justify-center">
     <a
+      data-role="edit-profile"
       href="#"
       class="w-2/3 bg-transparent border-2 text-cyan-500 border-cyan-500 h-12 font-bold items-center no-underline rounded-lg flex gap-3 justify-center hover:bg-cyan-600 hover:text-white transition"
     >
