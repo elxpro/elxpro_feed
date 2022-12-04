@@ -18,7 +18,7 @@ button {
 }
 
 :focus {
-  @apply shadow-sm shadow-cyan-500 outline-transparent;
+  @apply shadow-sm shadow-blue-500 outline-transparent;
 }
 
 @import "tailwindcss/base";

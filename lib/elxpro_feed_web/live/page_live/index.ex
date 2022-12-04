@@ -11,8 +11,10 @@ defmodule ElxproFeedWeb.PageLive.Index do
         author: "Gustavo Oliveira",
         role: "Elixir Developer",
         comments: [
-          id: "432",
-          content: "Pumpkin 123"
+          %{
+            id: "432",
+            content: "Pumpkin 123"
+          }
         ]
       },
       %{

@@ -1,13 +1,13 @@
 <article id={"feed-" <> @feed.id} class="first:mt-0 mt-8 bg-neutral-800 rounded-lg p-10">
   <header class="flex items-center justify-between" data-role="header" data-id={@feed.id}>
     <div class="flex items-center gap-4">
-      <img
-        data-role="avatar-url"
-        data-id={@feed.id}
-        class="w-16 h-16 rounded-lg border-2 border-neutral-800 outline-2 outline-cyan-500"
-        src={@feed.avatar_url}
-        alt=""
+      <.avatar
+        data_role="avatar-url"
+        data_id={@feed.id}
+        img_url={@feed.avatar_url}
+        has_border={false}
       />
+
       <div>
         <strong
           class="block text-neutral-100 leading-relaxed"
@@ -39,4 +39,12 @@
     <a href="#">elxpro/gustavo</a>
   </div>
   <.post_comment_form />
+  <div class="mt-8" id={"comments-"<> @feed.id}>
+    <.live_component
+      :for={comment <- @feed.comments}
+      module={Comment}
+      id={comment.id}
+      comment={comment}
+    />
+  </div>
 </article>

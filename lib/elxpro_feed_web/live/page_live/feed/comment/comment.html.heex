@@ -1,0 +1,47 @@
+<div id={"comment-" <> @id} class="mt-6 flex gap-4">
+  <.avatar data_role="avatar" data_id={@comment.id} has_border={false} />
+  <div class="flex-1">
+    <div lass="bg-neutral-700 rounded-lg p-4">
+      <header class="flex items-start justify-between">
+        <div>
+          <strong data-role="user-name" data-id={@comment.id}>Gustavo Oliveira</strong>
+          <time
+            data-role="date"
+            data-id={@comment.id}
+            title="maymonth"
+            dateTime="2023"
+            class="block text-xs leading-relaxed text-neutral-400"
+          >
+            around 1 hour ago
+          </time>
+        </div>
+
+        <button
+          data-role="delete"
+          data-id={@comment.id}
+          title="Delete Comment"
+          type="button"
+          class="bg-transparent border-0 cursor-pointer text-neutral-400 hover:text-red-500 transition rounded-sm"
+        >
+          <Heroicons.trash class="w-4 h-4" />
+        </button>
+      </header>
+
+      <p class="mt-4 text-neutral-300" data-role="content" data-id={@comment.id}>
+        <%= @comment.content %>
+      </p>
+    </div>
+
+    <footer data-role="footer" data-id={@comment.id} class="mt-4">
+      <button
+        data-role="like"
+        data-id={@comment.id}
+        title="Delete Comment"
+        type="button"
+        class="bg-transparent border-0 cursor-pointer text-neutral-400 flex items-center transition rounded-sm hover:text-blue-600"
+      >
+        <Heroicons.hand_thumb_up class="w-4 h-4 mr-2" /> Like <span class="ml-2">10</span>
+      </button>
+    </footer>
+  </div>
+</div>
