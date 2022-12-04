@@ -11,7 +11,5 @@ defmodule ElxproFeedWeb.PageLive.IndexTest do
     assert view
            |> element("[data-role=avatar-url][data-id=123]")
            |> render() =~ "https://avatars.githubusercontent.com/u/12762300?v=4"
-
-    open_browser(view)
   end
 end
