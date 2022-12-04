@@ -5,26 +5,38 @@
     id={"feed-" <> feed.id}
     class="first:mt-0 mt-8 bg-neutral-800 rounded-lg p-10"
   >
-    <header class="flex items-center justify-between">
+    <header class="flex items-center justify-between" data-role="header" data-id={feed.id}>
       <div class="flex items-center gap-4">
         <img
-          class="w-16 h-16 rounded-lg border-2 border-neutral-800 outline-2 outline-cyan-500"
-          src={feed.avatar_url}
           data-role="avatar-url"
           data-id={feed.id}
+          class="w-16 h-16 rounded-lg border-2 border-neutral-800 outline-2 outline-cyan-500"
+          src={feed.avatar_url}
           alt=""
         />
         <div>
-          <strong class="block text-neutral-100 leading-relaxed"><%= feed.author %></strong>
-          <span class="block text-neutral-400 leading-relaxed"><%= feed.role %></span>
+          <strong
+            class="block text-neutral-100 leading-relaxed"
+            data-role="author"
+            data-id={feed.id}
+          >
+            <%= feed.author %>
+          </strong>
+          <span class="block text-neutral-400 leading-relaxed" data-role="role" data-id={feed.id}>
+            <%= feed.role %>
+          </span>
         </div>
       </div>
-      <time class="text-sm text-neutral-400">
+      <time class="text-sm text-neutral-400" data-role="date" data-id={feed.id}>
         published at October
       </time>
     </header>
 
-    <div class="mt-6 text-neutral-300 leading-relaxed post-content">
+    <div
+      class="mt-6 text-neutral-300 leading-relaxed post-content"
+      data-role="text"
+      data-id={feed.id}
+    >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem cumque nulla voluptate.
 
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et dicta iure veniam.
