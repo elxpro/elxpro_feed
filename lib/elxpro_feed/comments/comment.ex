@@ -1,13 +1,14 @@
 defmodule ElxproFeed.Comments.Comment do
   use Ecto.Schema
   import Ecto.Changeset
+  alias ElxproFeed.Feeds.Feed
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "comments" do
     field :content, :string
     field :likes, :integer, default: 0
-    field :feed_id, :binary_id
+    belongs_to :feed, Feed
 
     timestamps()
   end

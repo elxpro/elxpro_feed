@@ -1,4 +1,4 @@
-defmodule ElxproFeedWeb.PageLive.FeedTest do
+defmodule ElxproFeedWeb.PageLive.Feed.Comment do
   use ElxproFeedWeb.ConnCase
   import Phoenix.LiveViewTest
 

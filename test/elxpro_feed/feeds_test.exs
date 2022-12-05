@@ -3,6 +3,6 @@ defmodule ElxproFeed.FeedsTest do
   alias ElxproFeed.Feeds
 
   test "list feeds" do
-    assert Feeds.list() == []
+    assert Feeds.list() |> Enum.count() < 5
   end
 end

@@ -1,4 +1,6 @@
 defmodule ElxproFeed.CommentsFixtures do
+  import ElxproFeed.FeedsFixtures
+
   @moduledoc """
   This module defines test helpers for creating
   entities via the `ElxproFeed.Comments` context.
@@ -12,7 +14,8 @@ defmodule ElxproFeed.CommentsFixtures do
       attrs
       |> Enum.into(%{
         content: "some content",
-        likes: 42
+        likes: 42,
+        feed_id: feed_fixture().id
       })
       |> ElxproFeed.Comments.create_comment()
 
