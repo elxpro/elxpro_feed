@@ -31,12 +31,7 @@
     data-role="text"
     data-id={@feed.id}
   >
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem cumque nulla voluptate.
-
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et dicta iure veniam.
-
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam cum ad fugit.
-    <a href="#">elxpro/gustavo</a>
+    <%= raw(Earmark.as_html!(@feed.content)) %>
   </div>
   <.post_comment_form />
   <div class="mt-8" id={"comments-"<> @feed.id}>
