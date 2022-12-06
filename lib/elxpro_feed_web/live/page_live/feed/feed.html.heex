@@ -1,0 +1,45 @@
+<article id={"feed-" <> @feed.id} class="first:mt-0 mt-8 bg-neutral-800 rounded-lg p-10">
+  <header class="flex items-center justify-between" data-role="header" data-id={@feed.id}>
+    <div class="flex items-center gap-4">
+      <.avatar
+        data_role="avatar-url"
+        data_id={@feed.id}
+        img_url={@feed.avatar_url}
+        has_border={false}
+      />
+
+      <div>
+        <strong
+          class="block text-neutral-100 leading-relaxed"
+          data-role="author"
+          data-id={@feed.id}
+        >
+          <%= @feed.author %>
+        </strong>
+        <span class="block text-neutral-400 leading-relaxed" data-role="role" data-id={@feed.id}>
+          <%= @feed.role %>
+        </span>
+      </div>
+    </div>
+    <time class="text-sm text-neutral-400" data-role="date" data-id={@feed.id}>
+      published at October
+    </time>
+  </header>
+
+  <div
+    class="mt-6 text-neutral-300 leading-relaxed post-content"
+    data-role="text"
+    data-id={@feed.id}
+  >
+    <%= raw(Earmark.as_html!(@feed.content)) %>
+  </div>
+  <.post_comment_form />
+  <div class="mt-8" id={"comments-"<> @feed.id}>
+    <.live_component
+      :for={comment <- @feed.comments}
+      module={Comment}
+      id={comment.id}
+      comment={comment}
+    />
+  </div>
+</article>
