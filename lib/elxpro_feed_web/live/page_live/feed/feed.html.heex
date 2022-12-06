@@ -33,7 +33,7 @@
   >
     <%= raw(Earmark.as_html!(@feed.content)) %>
   </div>
-  <.post_comment_form />
+  <.post_comment_form changeset={@comment_changeset} id={@id} target={@myself}/>
   <div class="mt-8" id={"comments-"<> @feed.id}>
     <.live_component
       :for={comment <- @feed.comments}

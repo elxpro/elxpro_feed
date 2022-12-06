@@ -24,4 +24,19 @@ defmodule ElxproFeedWeb.PageLive.FeedTest do
     assert has_element?(view, "[data-role=date][data-id=#{feed_id}]", "published at October")
     assert has_element?(view, "[data-role=text][data-id=#{feed_id}]")
   end
+
+  test "add a new comment", %{conn: conn} do
+    comment = comment_fixture()
+    {:ok, view, _html} = live(conn, ~p"/")
+
+    feed_id = comment.feed_id
+
+    refute view |> element("#comment-form-#{feed_id}_content") |> render() =~ "pumpkin"
+
+    view
+    |> form("#comment-form-#{feed_id}", %{comment: %{content: "pumpkin"}})
+    |> render_change()
+
+    assert view |> element("#comment-form-#{feed_id}_content") |> render() =~ "pumpkin"
+  end
 end
