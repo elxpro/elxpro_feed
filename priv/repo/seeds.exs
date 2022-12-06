@@ -1,17 +1,19 @@
 alias ElxproFeed.Feeds.Feed
 alias ElxproFeed.Repo
 
+content = "hi
+==
+
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius facilis doloremque fugit.!!!
+
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius facilis doloremque fugit.!!!
+
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius facilis doloremque fugit.!!!
+
+  [elxpro/gustavo](https://www.linkedin.com/in/gustavo-oliveira-642b23aa/)"
+
 feed_1 = %{
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas eius asperiores harum.
-
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt exercitationem velit.
-
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum velit sapiente repellendus.
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt est nostrum.
-
-    [elxpro/gustavo](https://www.linkedin.com/in/gustavo-oliveira-642b23aa/)
-  ",
+  content: content,
   avatar_url: "https://avatars.githubusercontent.com/u/12762300?v=4",
   role: "Software Engineer",
   author: "Gustavo Oliveira"
@@ -25,16 +27,7 @@ feed_1 = %{
 ElxproFeed.Comments.create_comment(%{content: "hi!!!", feed_id: feed.id})
 
 feed_2 = %{
-  content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas eius asperiores harum.
-
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt exercitationem velit.
-
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum velit sapiente repellendus.
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt est nostrum.
-
-    [elxpro/joe]https://www.linkedin.com/in/joedmorris/)
-  ",
+  content: content,
   role: "Principal Engineer",
   avatar_url: "https://avatars.githubusercontent.com/u/12762300?v=4",
   author: "Joe Morris"
