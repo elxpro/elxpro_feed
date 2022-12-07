@@ -19,6 +19,8 @@
         <button
           data-role="delete"
           data-id={@comment.id}
+          phx-target={@myself}
+          phx-click="delete"
           title="Delete Comment"
           type="button"
           class="bg-transparent border-0 cursor-pointer text-gray-400 hover:text-red-500 transition rounded-sm"
@@ -36,11 +38,16 @@
       <button
         data-role="like"
         data-id={@comment.id}
-        title="Delete Comment"
+        title="Like Comment"
+        phx-target={@myself}
+        phx-click="like"
         type="button"
         class="bg-transparent border-0 cursor-pointer text-gray-400 flex items-center transition rounded-sm hover:text-blue-600"
       >
-        <Heroicons.hand_thumb_up class="w-4 h-4 mr-2" /> Like <span class="ml-2">10</span>
+        <Heroicons.hand_thumb_up class="w-4 h-4 mr-2" /> Like
+        <span class="ml-2" data-role="like-count" data-id={@comment.id}>
+          <%= @comment.likes %>
+        </span>
       </button>
     </footer>
   </div>
