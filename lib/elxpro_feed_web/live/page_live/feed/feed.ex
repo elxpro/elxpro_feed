@@ -1,5 +1,6 @@
 defmodule ElxproFeedWeb.PageLive.Feed do
   use ElxproFeedWeb, :live_component
+  import ElxproFeed.Shared.DateUtils
   import Phoenix.HTML.Form
   import ElxproFeedWeb.PageLive.Shared.Components
   alias __MODULE__.Comment
@@ -78,4 +79,6 @@ defmodule ElxproFeedWeb.PageLive.Feed do
     </.form>
     """
   end
+
+
 end
