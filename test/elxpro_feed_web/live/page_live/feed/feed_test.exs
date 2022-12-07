@@ -22,8 +22,7 @@ defmodule ElxproFeedWeb.PageLive.FeedTest do
 
     assert has_element?(view, "[data-role=author][data-id=#{feed_id}]", feed.author)
     assert has_element?(view, "[data-role=role][data-id=#{feed_id}]", feed.role)
-    assert has_element?(view, "[data-role=date][data-id=#{feed_id}]", "published at October")
-    assert has_element?(view, "[data-role=date][data-id=#{feed_id}]", "published at October")
+    assert has_element?(view, "[data-role=date][data-id=#{feed_id}]", "published at 0 hours")
     assert has_element?(view, "[data-role=text][data-id=#{feed_id}]")
   end
 
