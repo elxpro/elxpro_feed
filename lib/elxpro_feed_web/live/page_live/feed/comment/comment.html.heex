@@ -45,7 +45,9 @@
         class="bg-transparent border-0 cursor-pointer text-gray-400 flex items-center transition rounded-sm hover:text-blue-600"
       >
         <Heroicons.hand_thumb_up class="w-4 h-4 mr-2" /> Like
-        <span class="ml-2" data-role="like-count" data-id={@comment.id}><%= @comment.likes %></span>
+        <span class="ml-2" data-role="like-count" data-id={@comment.id}>
+          <%= @comment.likes %>
+        </span>
       </button>
     </footer>
   </div>

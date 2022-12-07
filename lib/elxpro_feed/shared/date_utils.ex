@@ -1,5 +1,4 @@
 defmodule ElxproFeed.Shared.DateUtils do
-
   def format_date(date) do
     "#{date.day} of #{date.year} at #{date.hour}:#{date.minute}h"
   end

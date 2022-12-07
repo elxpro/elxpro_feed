@@ -79,6 +79,4 @@ defmodule ElxproFeedWeb.PageLive.Feed do
     </.form>
     """
   end
-
-
 end
