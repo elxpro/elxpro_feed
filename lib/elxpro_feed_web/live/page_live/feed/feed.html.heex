@@ -9,11 +9,7 @@
       />
 
       <div>
-        <strong
-          class="block text-gray-100 leading-relaxed"
-          data-role="author"
-          data-id={@feed.id}
-        >
+        <strong class="block text-gray-100 leading-relaxed" data-role="author" data-id={@feed.id}>
           <%= @feed.author %>
         </strong>
         <span class="block text-gray-400 leading-relaxed" data-role="role" data-id={@feed.id}>
@@ -26,14 +22,10 @@
     </time>
   </header>
 
-  <div
-    class="mt-6 text-gray-300 leading-relaxed feed-content"
-    data-role="text"
-    data-id={@feed.id}
-  >
+  <div class="mt-6 text-gray-300 leading-relaxed feed-content" data-role="text" data-id={@feed.id}>
     <%= raw(Earmark.as_html!(@feed.content)) %>
   </div>
-  <.post_comment_form changeset={@comment_changeset} id={@id} target={@myself}/>
+  <.post_comment_form changeset={@comment_changeset} id={@id} target={@myself} />
   <div class="mt-8" id={"comments-"<> @feed.id}>
     <.live_component
       :for={comment <- @feed.comments}
